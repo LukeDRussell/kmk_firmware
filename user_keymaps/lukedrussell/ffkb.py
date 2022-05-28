@@ -1,17 +1,20 @@
 import board
 
-from kb import KMKKeyboard
+import kb
 from kmk.keys import KC
 from kmk.modules.layers import Layers
+from kmk.modules.encoder import EncoderHandler
 
 
-keyboard = KMKKeyboard()
+encoder_handler = EncoderHandler()
+encoder_handler.pins = kb.encoder_pins
+
+keyboard = kb.KMKKeyboard()
 
 keyboard.modules.append(Layers())
 
-
-# Cleaner key names
 _______ = KC.TRNS
+xxxxxxx = KC.NO
 
 keyboard.keymap = [
     [  #COLEMAK-DH
