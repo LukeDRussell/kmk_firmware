@@ -16,7 +16,7 @@ class KMKKeyboard(_KMKKeyboard):
         board.MISO,
     )
     row_pins = (
-        board.P0_06,
+        board.P0_08,
         board.P0_31,
         board.P0_29,
         board.P0_02,
@@ -24,7 +24,7 @@ class KMKKeyboard(_KMKKeyboard):
         board.SCK,
     )
     diode_orientation = DiodeOrientation.COLUMNS
-    rgb_pixel_pin = board.P0_08
+    rgb_pixel_pin = board.P0_06
     rgb_num_pixels = 42
     i2c = board.I2C
 
