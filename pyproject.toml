@@ -9,12 +9,7 @@ authors = [
 ]
 dependencies = []
 requires-python = ">=3.9"
-license = {text = """
-  Almost all of KMK is licensed under the GPLv3. The only exceptions are Hardware 
-  schematics are licensed under individual terms per schematic. Files/components 
-  not listed above or containing its own copyright header in the file itself are 
-  licensed under GPLv3.
-  """}
+license = {text = "See LICENSE.md"}
 [project.optional-dependencies]
 
 [build-system]
