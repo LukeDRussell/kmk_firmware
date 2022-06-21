@@ -88,14 +88,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "flake8-commas"
-version = "2.1.0"
-summary = "Flake8 lint for trailing commas."
-dependencies = [
-    "flake8>=2",
-]
-
-[[package]]
 name = "flake8-comprehensions"
 version = "3.10.0"
 requires_python = ">=3.7"
@@ -378,7 +370,7 @@ summary = "Measures the displayed width of unicode strings in a terminal"
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:5b671443e97ff03ee6fa05574692dde7f2a34b6440944fa23d8723fd0b0ad9aa"
+content_hash = "sha256:1e2dc62778cd0628f122479c7d3cbd5ce7e0b993cca0c3688db23330beadffd9"
 
 [metadata.files]
 "adafruit-ampy 1.1.0" = [
@@ -445,10 +437,6 @@ content_hash = "sha256:5b671443e97ff03ee6fa05574692dde7f2a34b6440944fa23d8723fd0
 "flake8-black 0.2.5" = [
     {file = "flake8_black-0.2.5-py3-none-any.whl", hash = "sha256:022744ef1513f9a0b748c65ae2a81024d71b992c88f48212187a3fdbb4988943"},
     {file = "flake8-black-0.2.5.tar.gz", hash = "sha256:fb6372cc90da129eec492989485a4f99d976f41d4072536470c18e0da0164724"},
-]
-"flake8-commas 2.1.0" = [
-    {file = "flake8_commas-2.1.0-py2.py3-none-any.whl", hash = "sha256:ebb96c31e01d0ef1d0685a21f3f0e2f8153a0381430e748bf0bbbb5d5b453d54"},
-    {file = "flake8-commas-2.1.0.tar.gz", hash = "sha256:940441ab8ee544df564ae3b3f49f20462d75d5c7cac2463e0b27436e2050f263"},
 ]
 "flake8-comprehensions 3.10.0" = [
     {file = "flake8_comprehensions-3.10.0-py3-none-any.whl", hash = "sha256:dad454fd3d525039121e98fa1dd90c46bc138708196a4ebbc949ad3c859adedb"},

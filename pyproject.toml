@@ -9,7 +9,13 @@ authors = [
 ]
 dependencies = []
 requires-python = ">=3.9"
-license = {text = "Almost all of KMK is licensed under the GPLv3. The only exceptions are Hardware schematics are licensed under individual terms per schematic. Files/components not listed above or containing its own copyright header in the file itself are licensed under GPLv3"}
+license = {text = """
+  Almost all of KMK is licensed under the GPLv3. The only exceptions are Hardware 
+  schematics are licensed under individual terms per schematic. Files/components 
+  not listed above or containing its own copyright header in the file itself are 
+  licensed under GPLv3.
+  """}
+[project.optional-dependencies]
 
 [build-system]
 requires = ["pdm-pep517"]
@@ -21,15 +27,13 @@ build-backend = "pdm.pep517.api"
 skip-string-normalization = true
 target = ["py39"]
 # explicitly exclude user_keymaps from black formatting rules
-# because a visually-appealing keymap list will be flattened
 # by black into a much harder to understand format
-exclude = '''
+# extend_exclude list merges with .gitignore
+extend_exclude = '''
 /(
-  | __pypackages__
   | boards
   | docs
   | user_keymaps
-  | mnt
 )/
 '''
 
@@ -40,18 +44,48 @@ verify_ssl = true
 name = "pypi"
 [tool.pdm.dev-dependencies]
 dev = [
+    "isort",
+    "black",
     "flake8>=3.9.0",
-    "flake8-commas",
     "flake8-comprehensions",
+    "flake8-quotes",
     "flake8-isort",
-    "python-magic",
+    "flake8-black"]
+utils = [
     "adafruit-ampy",
     "ipdb",
     "ipython",
-    "isort",
-    "neovim",
     "s3cmd",
-    "black",
-    "flake8-quotes",
-    "flake8-black",
+    "python-magic",
+]
+ide = [
+    "neovim",
+
+]
+
+[tool.isort]
+profile = "black"
+known_standard_library = [
+  "analogio",
+  "bitbangio",
+  "bleio",
+  "board",
+  "busio",
+  "digitalio",
+  "framebuf",
+  "gamepad",
+  "gc",
+  "machine",
+  "microcontroller",
+  "micropython",
+  "neopixel",
+  "pulseio",
+  "pyb",
+  "pyb",
+  "pydux",
+  "supervisor",
+  "ubluepy",
+  "uio",
+  "uos",
+  "usb_hid",
 ]
