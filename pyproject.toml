@@ -37,6 +37,8 @@ extend_exclude = '''
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
+update-strategy = "reuse"
+
 [tool.pdm.dev-dependencies]
 dev = [
     "isort",
@@ -55,7 +57,6 @@ utils = [
 ]
 ide = [
     "neovim",
-
 ]
 
 [tool.isort]

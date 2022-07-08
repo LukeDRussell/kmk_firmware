@@ -1,5 +1,6 @@
 # KMK
 .ampy
+.usb_drive
 .submodules
 .circuitpy-deps
 .micropython-deps
