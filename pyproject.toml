@@ -7,40 +7,14 @@ authors = [
     {name = "@kdb424"},
     {name = "The KMK Community"},
 ]
-license = {text = "See LICENSE.md"}
-requires-python = ">=3.9"
-
 dependencies = []
+requires-python = ">=3.9"
+license = {text = "See LICENSE.md"}
 [project.optional-dependencies]
-utils = [
-    "adafruit-ampy",
-    "ipdb",
-    "ipython",
-    "s3cmd",
-    "python-magic",
-]
 
 [build-system]
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
-
-[tool.pdm]
-[[tool.pdm.source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-update-strategy = "reuse"
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "black",
-    "isort",
-    "flake8",
-    "flake8-black",
-    "flake8-isort",
-    "flake8-comprehensions",
-    "flake8-quotes",
-    ]
 
 [tool.black]
 # since black refuses to allow single-quotes...  see locked conversation at
@@ -57,6 +31,33 @@ extend_exclude = '''
   | user_keymaps
 )/
 '''
+
+[tool.pdm]
+[[tool.pdm.source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+update-strategy = "reuse"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "isort",
+    "black",
+    "flake8>=3.9.0",
+    "flake8-comprehensions",
+    "flake8-quotes",
+    "flake8-isort",
+    "flake8-black"]
+utils = [
+    "adafruit-ampy",
+    "ipdb",
+    "ipython",
+    "s3cmd",
+    "python-magic",
+]
+ide = [
+    "neovim",
+]
 
 [tool.isort]
 profile = "black"
