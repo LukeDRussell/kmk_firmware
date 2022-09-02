@@ -1,9 +1,9 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.9-slim-bullseye as build
 
 ARG VERSION=7.3.3
 
 RUN apt-get update 
-RUN apt install -y git build-essential pkg-config gettext libffi-dev
+RUN apt install -y git build-essential pkg-config gettext libffi-dev --no-install-recommends
 RUN git clone https://github.com/adafruit/circuitpython.git
 WORKDIR /circuitpython/
 RUN git checkout $VERSION
@@ -14,7 +14,8 @@ WORKDIR /circuitpython/ports/unix/
 RUN make axtls
 RUN make micropython
 RUN make install
-WORKDIR /
-RUN rm -rf /circuitpython
-RUN apt purge --auto-remove -y git build-essential pkg-config gettext libffi-dev
+CMD ["/usr/local/bin/micropython"]
+
+FROM alpine:latest as main
+COPY --from=build /usr/local/bin/micropython /usr/local/bin/micropython
 CMD ["/usr/local/bin/micropython"]
