@@ -70,7 +70,7 @@ class AbstractHID:
         self.post_init()
 
     def __repr__(self):
-        return f'{self.__class__.__name__}(REPORT_BYTES={self.REPORT_BYTES})'
+        return f"{self.__class__.__name__}(REPORT_BYTES={self.REPORT_BYTES})"
 
     def post_init(self):
         pass
@@ -242,7 +242,7 @@ class BLEHID(AbstractHID):
     # Hardcoded in CPy
     MAX_CONNECTIONS = const(2)
 
-    def __init__(self, ble_name=str(getmount('/').label), **kwargs):
+    def __init__(self, ble_name=str(getmount("/").label), **kwargs):
         self.ble_name = ble_name
         super().__init__()
 
@@ -262,15 +262,15 @@ class BLEHID(AbstractHID):
 
     @property
     def devices(self):
-        '''Search through the provided list of devices to find the ones with the
-        send_report attribute.'''
+        """Search through the provided list of devices to find the ones with the
+        send_report attribute."""
         if not self.ble.connected:
             return {}
 
         result = {}
 
         for device in self.hid.devices:
-            if not hasattr(device, 'send_report'):
+            if not hasattr(device, "send_report"):
                 continue
             us = device.usage
             up = device.usage_page

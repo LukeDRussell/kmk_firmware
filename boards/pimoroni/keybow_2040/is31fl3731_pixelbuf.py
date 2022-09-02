@@ -1,5 +1,5 @@
 '''
-Simple PixelBuf wrapper for the IS31FL3731 controller used for the Keybow2040's RGB LEDs.
+Simple PixelBuf wrapper for IS31FL3731 controller used for the Keybow2040's RGB LEDs.
 '''
 
 import board

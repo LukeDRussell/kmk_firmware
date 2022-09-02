@@ -45,7 +45,7 @@ class KeyboardTest:
 
         self.keyboard._init(hid_type=HIDModes.NOOP)
 
-    @patch('kmk.hid.AbstractHID.hid_send')
+    @patch("kmk.hid.AbstractHID.hid_send")
     def test(self, testname, key_events, assert_hid_reports, hid_send):
         if self.debug_enabled:
             print(testname, key_events, assert_hid_reports)
@@ -81,7 +81,7 @@ class KeyboardTest:
             }
             if self.debug_enabled:
                 print(
-                    'assert keys:',
+                    "assert keys:",
                     hid_report_keys == assert_keys,
                     hid_report_keys,
                     assert_keys,
@@ -96,7 +96,7 @@ class KeyboardTest:
             )
             if self.debug_enabled:
                 print(
-                    'assert mods:',
+                    "assert mods:",
                     hid_report_modifiers == assert_modifiers,
                     hid_report_modifiers,
                     assert_modifiers,

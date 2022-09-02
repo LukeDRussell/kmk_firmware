@@ -9,7 +9,7 @@ class ModTap(HoldTap):
         super().__init__()
         make_argumented_key(
             validator=mod_tap_validator,
-            names=('MT',),
+            names=("MT",),
             on_press=self.ht_pressed,
             on_release=self.ht_released,
         )

@@ -5,11 +5,11 @@ from kmk.types import HoldTapKeyMeta
 
 class TapDanceKeyMeta:
     def __init__(self, *keys, tap_time=None):
-        '''
+        """
         Any key in the tapdance sequence that is not already a holdtap
         key gets converted to a holdtap key with identical tap and hold
         meta attributes.
-        '''
+        """
         self.tap_time = tap_time
         self.keys = []
 
@@ -33,7 +33,7 @@ class TapDance(HoldTap):
         super().__init__()
         make_argumented_key(
             validator=TapDanceKeyMeta,
-            names=('TD',),
+            names=("TD",),
             on_press=self.td_pressed,
             on_release=self.td_released,
         )

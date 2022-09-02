@@ -53,7 +53,8 @@ class Oled(Extension):
         gc.collect()
 
     def returnCurrectRenderText(self, layer, singleView):
-        # for now we only have static things and react to layers. But when we react to battery % and wpm we can handle the logic here
+        # for now we only have static things and react to layers. But when we react to
+        # battery % and wpm we can handle the logic here
         if singleView[0] == OledReactionType.STATIC:
             return singleView[1][0]
         if singleView[0] == OledReactionType.LAYER:
@@ -104,7 +105,7 @@ class Oled(Extension):
         splash = displayio.Group()
         self._display.show(splash)
         odb = displayio.OnDiskBitmap(
-            '/' + self.returnCurrectRenderText(layer, self._views[0])
+            "/" + self.returnCurrectRenderText(layer, self._views[0])
         )
         image = displayio.TileGrid(odb, pixel_shader=odb.pixel_shader)
         splash.append(image)
