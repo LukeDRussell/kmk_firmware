@@ -1,0 +1,17 @@
+[flake8]
+# black
+max-line-length = 88
+
+extend-ignore =
+    # See https://github.com/PyCQA/pycodestyle/issues/373
+    X100, E262,  
+    # black 
+    E203,
+
+per-file-ignores =
+# Allow misaligned array entries, crazy line lengths, unused variables,
+# multiple spaces after commas in lists (for grid alignment), and put
+# your imports in whatever order you want
+	user_keymaps/**/*.py: E131,F401,E501,E241,E131,BLK100,I003
+	boards/**/main.py: E131,F401,E501,E241,E131,BLK100,I003
+	tests/test_data/keymaps/**/*.py: F401,E501

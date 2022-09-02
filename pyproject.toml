@@ -17,20 +17,17 @@ requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
 [tool.black]
-# since black refuses to allow single-quotes...  see locked conversation at
-# https://github.com/psf/black/issues/594
-skip-string-normalization = true
 target = ["py39"]
 # explicitly exclude user_keymaps from black formatting rules
 # by black into a much harder to understand format
 # extend_exclude list merges with .gitignore
-extend_exclude = '''
+extend_exclude = """
 /(
   | boards
   | docs
   | user_keymaps
 )/
-'''
+"""
 
 [tool.pdm]
 [[tool.pdm.source]]
@@ -45,7 +42,6 @@ dev = [
     "black",
     "flake8>=3.9.0",
     "flake8-comprehensions",
-    "flake8-quotes",
     "flake8-isort",
     "flake8-black"]
 utils = [
