@@ -1,6 +1,6 @@
 import board
 
-from kb_kb2040 import KMKKeyboard
+from kb import KMKKeyboard
 
 from kmk.extensions.media_keys import MediaKeys
 from kmk.extensions.rgb import RGB
